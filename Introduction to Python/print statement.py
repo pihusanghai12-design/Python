@@ -1,0 +1,5 @@
+print("My name is Pihu Sanghai. ")
+print("I am 14 years old.")
+print("I live in Nepal.")
+print("I love painting, listening to musics and playing few outdoor games.")
+print("I have a nuclear family consisting my dad, my mom, and little brother and me. ")

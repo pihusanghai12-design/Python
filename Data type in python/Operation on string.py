@@ -4,17 +4,18 @@ print(len(sentence))
 
 #Indexing in string
 a="Pihu Sanghai"
-print(a[6])
+print(a[9])
 
 #Slicing of string
 b="Coding"
-print(a[:3])
-print(a[4:])
-print(a[:])
-print(a[2:6])
-print(a[::-1])
+print(b[:3])
+print(b[4:])
+print(b[:])
+print(b[2:6])
+print(b[::-1])
 
 #Concatenation in string
 c="Bright"
 d=" Champs"
 print(c+d)
+

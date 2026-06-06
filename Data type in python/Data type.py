@@ -13,3 +13,4 @@ print(type(boolean))
 string="Coding"
 print(string)
 print(type(string))
+

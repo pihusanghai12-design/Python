@@ -13,3 +13,7 @@ print(c)
 d=14
 d /=2  
 print(d)
+
+e= 45
+e **=2
+print(e)

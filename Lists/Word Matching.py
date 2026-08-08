@@ -10,3 +10,7 @@ def word_match(words):
 
 count= word_match(["lil","ctrc","1231","Tea","abc"])       
 print("Number of words having first and last letter same: ",count)
+
+
+
+

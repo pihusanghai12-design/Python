@@ -7,7 +7,7 @@ def palindrome(r):
         a+=1
         b-=1
     return True
-r=(1,2,4,2,1)    
+r=(1,2,4,2,1,)    
 if (palindrome(r)):
     print("Tuple is Flip-Flop")
 else:

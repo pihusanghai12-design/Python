@@ -5,4 +5,4 @@ a= 3
 for key in test_dict:
     if test_dict [key]==a:
         result = result +1
-print("Frequency of 3 is: ",a)
+print("Frequency of 3 is: ",result)

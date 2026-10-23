@@ -9,7 +9,15 @@ bullet= pygame.image.load("Bullet.png")
 enemy= pygame.image.load("Enemy.png")
 bg_image= pygame.image.load("Space.jpg")
 
-player_x, player_y = 370, 300
+rocket = pygame.transform.scale(rocket, (64, 64))
+
+enemy = pygame.transform.scale(enemy, (64, 64))
+
+bullet = pygame.transform.scale(bullet, (16, 32))
+
+bg_image = pygame.transform.scale(bg_image, (800, 500))
+
+player_x, player_y = 370, 380
 change_x= 0
 
 enemy_x= random.randint(0,750)
@@ -28,7 +36,7 @@ def collision(ex,ey, bx, by):
 running= True
 
 while running:
-    screen.blit(bg_image (0,0))
+    screen.blit(bg_image, (0,0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -44,6 +52,35 @@ while running:
                 bullet_state= "Fire"
 
         if event.type == pygame.KEYUP:
-            change_x = 0          
+            change_x = 0     
 
+    player_x += change_x
+    player_x = max(0,min(player_x, 600))
 
+    enemy_x += enemy_speed 
+    if enemy_x <=0 or enemy_x >= 600:
+        enemy_speed *= -1
+        enemy_y += 40
+
+    if bullet_state == "Fire":
+        screen.blit(bullet, (bullet_x +16, bullet_y ))
+        bullet_y -= 10
+
+    if bullet_y <= 0:
+        bullet_y = 380
+        bullet_state= "ready"
+
+    if collision(enemy_x, enemy_y, bullet_x, bullet_y):
+        score +=1
+        bullet_y = 380
+        bullet_state= "ready"    
+        enemy_x = random.randint(0,750)
+        enemy_y = 100
+
+    screen.blit(rocket, (player_x, player_y))  
+    screen.blit(enemy, (enemy_x, enemy_y))
+
+    text= font.render("Score= " + str(score), True, "White")
+    screen.blit(text, (10,10) )
+
+    pygame.display.update()  

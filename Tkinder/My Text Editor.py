@@ -20,6 +20,7 @@ def open_file():
         text= input_file.read()
         txt_edit.insert(END, text)
         input_file.close()
+        root.title(f"Codingal's Text Editor - {filepath}")
 
 def save_file():
     """Open a file for editing"""
